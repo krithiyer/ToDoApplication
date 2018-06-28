@@ -4,7 +4,7 @@ ToDo is an android app that allows building a todo list and basic todo items man
 
 Submitted by: Krithika Iyer
 
-Time spent: 2 1/2 hours spent in total
+Time spent: 3 1/2 hours spent in total
 
 ## User Stories
 
@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-* [ ] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected in the todo list
+* [X] User can **tap a todo item in the list and bring up an edit screen for the todo item** and then have any changes to the text reflected in the todo list
 
 The following **additional** features are implemented:
 
@@ -26,7 +26,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Walkthrough](walkthrough.gif)
+![Walkthrough](walkthrough.gif) 
 
 GIF created with [RecordIt](http://www.cockos.com/licecap/).
 
@@ -36,7 +36,7 @@ Understanding how to commit, push, and pull with git was initially confusing.
 
 ## License
 
-    Copyright [2018]
+    Copyright [2018][Krithika Iyer]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
