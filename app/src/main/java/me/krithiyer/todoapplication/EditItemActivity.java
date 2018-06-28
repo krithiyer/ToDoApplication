@@ -30,11 +30,12 @@ public class EditItemActivity extends AppCompatActivity {
     public void onSaveItem(View v) {
         // Prepare intent to pass back to MainActivity
         Intent data = new Intent();
-        // Pass updated item text and original position
+        // passes updated item with original position
         data.putExtra(ITEM_TEXT, etItemText.getText().toString());
-        data.putExtra(ITEM_POSITION, position); // ints work too
-        setResult(RESULT_OK, data); // set result code and bundle data for response
-        finish(); // closes the edit activity, passes intent back to main
+        data.putExtra(ITEM_POSITION, position);
+        setResult(RESULT_OK, data);
+        // end, passes back to main
+        finish();
     }
 
 }

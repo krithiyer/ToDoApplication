@@ -36,17 +36,17 @@ public class MainActivity extends AppCompatActivity {
        super.onActivityResult(requestCode, resultCode, data);
        // EDIT_REQUEST_CODE defined with constants
        if (resultCode == RESULT_OK && requestCode == EDIT_REQUEST_CODE) {
-           // extract updated item value from result extras
+           // get updated item data
            String updatedItem = data.getExtras().getString(ITEM_TEXT);
-           // get the position of the item which was edited
+           // position of updated item
            int position = data.getExtras().getInt(ITEM_POSITION, 0);
            // update the model with the new item text at the edited position
            items.set(position, updatedItem);
-           // notify the adapter the model changed
+           // update adapter about data changes
            itemsAdapter.notifyDataSetChanged();
-           // Store the updated items back to disk
+           // store updated data
            writeItems();
-           // notify the user the operation completed OK
+           // user notification of completion
            Toast.makeText(this, "Item updated", Toast.LENGTH_SHORT).show();
        }
    }
@@ -94,15 +94,15 @@ public class MainActivity extends AppCompatActivity {
         lvItems.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // remove specified item
+                // remove specific item
                 items.remove(position);
-                // updating adapter that data has been modified
+                // notifying that data has been updated
                 itemsAdapter.notifyDataSetChanged();
                 // store updated list
                 writeItems();
                 // debugging
                 Log.i("MainActivity", "Removed item " + position);
-                // return true to indicate long click consumed
+                // return true for long click
                 return true;
             }
         });
@@ -112,10 +112,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // context and activity class
                 Intent i = new Intent(MainActivity.this, EditItemActivity.class);
-                // put "extras" into the bundle for access in the edit activity
+                // extras accessible for edit activity
                 i.putExtra(ITEM_TEXT, items.get(position));
                 i.putExtra(ITEM_POSITION, position);
-                // shows edit expectation along with result expectation
+                // edit and result expectation
                 startActivityForResult(i, EDIT_REQUEST_CODE);
             }
         });
